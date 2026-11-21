@@ -38,3 +38,12 @@ Thumbs.db
 
 # Bun (binary lockfile; keep bun.lock text)
 bun.lockb
+
+# Signing keys & local secrets (never commit)
+*.keystore
+*.jks
+keystore.properties
+android/keystore.properties
+
+# Reference folder from another app (not part of this project)
+qitaapp/
