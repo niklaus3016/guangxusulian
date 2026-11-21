@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Moon, Sun, Volume2, VolumeX, Smartphone, Trash2, ShieldCheck, ScrollText, ChevronRight } from 'lucide-react';
+import { Moon, Sun, Volume2, VolumeX, Smartphone, Trash2, ShieldCheck, ChevronRight } from 'lucide-react';
 import { APP_VERSION, AppSettings, DotShape, DotSize } from '../types';
 import { getDotDimensions, triggerHitFeedback } from '../utils/feedback';
 import { ConfirmModal } from './ConfirmModal';
 import { PolicyDetailModal } from './consent/PolicyDetailModal';
 import { PrivacyPolicyContent } from './consent/PrivacyPolicyContent';
-import { UserAgreementContent } from './consent/UserAgreementContent';
 
 interface SettingsViewProps {
   settings: AppSettings;
@@ -21,7 +20,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
   onClearAllRecords,
 }) => {
   const [confirmClear, setConfirmClear] = useState(false);
-  const [policyDetail, setPolicyDetail] = useState<'privacy' | 'agreement' | null>(null);
+  const [policyDetail, setPolicyDetail] = useState<'privacy' | null>(null);
 
   const update = <K extends keyof AppSettings>(key: K, value: AppSettings[K]) => {
     const next = { ...settings, [key]: value };
@@ -245,26 +244,8 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
           </button>
         </section>
 
-        {/* 6. User Agreement & Privacy Policy */}
+        {/* 6. Privacy Policy */}
         <section className="rounded-2xl bg-white dark:bg-[#0F1621] border border-slate-200 dark:border-slate-800 divide-y divide-slate-100 dark:divide-slate-800/80 overflow-hidden">
-          <button
-            type="button"
-            onClick={() => setPolicyDetail('agreement')}
-            className="w-full p-5 flex items-center justify-between gap-4 text-left hover:bg-slate-50 dark:hover:bg-slate-800/40 transition-colors"
-          >
-            <div className="flex items-start gap-3">
-              <div className="w-9 h-9 rounded-xl bg-slate-100 dark:bg-[#151F2E] text-cyan-600 dark:text-cyan-400 flex items-center justify-center shrink-0">
-                <ScrollText className="w-4 h-4" />
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold text-slate-900 dark:text-white">用户服务协议</h3>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                  查看本应用的服务条款与适用法律说明
-                </p>
-              </div>
-            </div>
-            <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
-          </button>
           <button
             type="button"
             onClick={() => setPolicyDetail('privacy')}
@@ -322,14 +303,6 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
         </section>
       </div>
 
-      <PolicyDetailModal
-        open={policyDetail === 'agreement'}
-        onClose={() => setPolicyDetail(null)}
-        title="用户服务协议"
-        icon={<ScrollText className="w-5 h-5" />}
-      >
-        <UserAgreementContent />
-      </PolicyDetailModal>
       <PolicyDetailModal
         open={policyDetail === 'privacy'}
         onClose={() => setPolicyDetail(null)}
