@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">光序速练</string>
+    <string name="title_activity_main">光序速练</string>
+    <string name="package_name">com.gxsl.app</string>
+    <string name="custom_url_scheme">com.gxsl.app</string>
+</resources>

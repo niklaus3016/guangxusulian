@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Capacitor Android sync output (regenerated on each build)
+android/app/src/main/assets/public/
+
+# Android / Gradle
+android/.gradle/
+android/build/
+android/app/build/
+android/captures/
+android/local.properties
+android/.idea/
+*.iml
+.gradle/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Bun (binary lockfile; keep bun.lock text)
+bun.lockb

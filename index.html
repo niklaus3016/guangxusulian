@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>光序速练 — 指尖操作自测与训练工具</title>
+    <meta name="description" content="光序速练｜指尖操作自测工具，测试点击速度与反应时延，记录个人训练数据。" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta property="og:title" content="光序速练" />
+    <meta property="og:description" content="光序速练｜指尖操作自测工具，测试点击速度与反应时延，记录个人训练数据。" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function () {
+        try {
+          var raw = localStorage.getItem('guangxu_settings_v1');
+          if (raw) {
+            var parsed = JSON.parse(raw);
+            if (parsed.theme === 'light') {
+              document.documentElement.classList.remove('dark');
+            } else {
+              document.documentElement.classList.add('dark');
+            }
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-[#070B11] dark:text-slate-100 antialiased selection:bg-cyan-500/30">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

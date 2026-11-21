@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>隐私政策 · 光序速练</title>
+    <meta name="description" content="光序速练隐私政策">
+    <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#070B11" media="(prefers-color-scheme: dark)">
+    <style>
+        /* 色板与 App（Tailwind slate/cyan 体系）保持一致，支持明暗双主题 */
+        :root {
+            --bg: #f8fafc;          /* slate-50 */
+            --card: #ffffff;        /* white */
+            --inner: #f1f5f9;       /* slate-100 */
+            --title: #0f172a;       /* slate-900 */
+            --text: #334155;        /* slate-700 */
+            --muted: #64748b;       /* slate-500 */
+            --muted-soft: #94a3b8;  /* slate-400 */
+            --accent: #0891b2;      /* cyan-600 */
+            --accent-strong: #06b6d4; /* cyan-500 */
+            --accent-soft: rgba(236, 254, 255, 0.7); /* cyan-50/70 */
+            --border: #e2e8f0;      /* slate-200 */
+            --shadow: 0 24px 60px -32px rgba(15, 23, 42, 0.28);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #070B11;
+                --card: #0F1621;
+                --inner: rgba(30, 41, 59, 0.6); /* slate-800/60 */
+                --title: #ffffff;
+                --text: #cbd5e1;       /* slate-300 */
+                --muted: #94a3b8;      /* slate-400 */
+                --muted-soft: #64748b; /* slate-500 */
+                --accent: #22d3ee;     /* cyan-400 */
+                --accent-strong: #22d3ee;
+                --accent-soft: rgba(8, 51, 68, 0.3); /* cyan-950/30 */
+                --border: rgba(51, 65, 85, 0.8);    /* slate-700 */
+                --shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.7);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { -webkit-tap-highlight-color: transparent; }
+
+        body {
+            /* 与 App 一致：仅使用系统字体栈，不依赖外部字体 CDN（保持离线可用） */
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            background-image:
+                radial-gradient(ellipse at top, rgba(34, 211, 238, 0.10), transparent 58%),
+                radial-gradient(ellipse at bottom right, rgba(6, 182, 212, 0.08), transparent 55%);
+            background-attachment: fixed;
+            color: var(--text);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+            padding: 32px 16px 56px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px; /* 对应 App rounded-3xl */
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        /* 页头（页面框架，非政策正文） */
+        .doc-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 28px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .doc-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px; /* 对应 App rounded-xl */
+            background: var(--accent-soft);
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .doc-icon svg { width: 22px; height: 22px; }
+
+        .doc-heading h1 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--title);
+            letter-spacing: 0.01em;
+        }
+
+        .doc-heading .version {
+            margin-top: 2px;
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: 0.04em;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .doc-body { padding: 28px 32px 36px; }
+
+        /* 以下正文样式与 App 弹窗正文逐字对应的视觉语义 */
+        h1.title {
+            font-size: 24px;       /* text-2xl */
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .date {
+            text-align: center;
+            font-size: 14px;       /* text-sm */
+            color: var(--muted);
+            margin-bottom: 24px;
+        }
+
+        .date strong { font-weight: 600; color: var(--muted); }
+
+        .highlight {
+            background: var(--accent-soft);
+            border-left: 4px solid var(--accent-strong);
+            border-radius: 12px;  /* rounded-xl */
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        .highlight p { font-size: 14px; line-height: 1.7; color: var(--text); }
+
+        p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 16px;
+        }
+
+        section { margin-top: 28px; }
+
+        h2 {
+            font-size: 18px;       /* text-lg */
+            font-weight: 600;
+            color: var(--title);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        ol {
+            padding-left: 24px;     /* pl-6 */
+            margin: 0 0 24px;
+        }
+
+        li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text);
+            margin-bottom: 10px;   /* space-y-2.5 */
+        }
+
+        li::marker {
+            color: var(--muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        strong { font-weight: 600; color: var(--title); }
+
+        .contact {
+            margin: 0 0 24px;
+            padding: 16px;
+            background: var(--inner);
+            border: 1px solid var(--border);
+            border-radius: 12px;  /* rounded-xl */
+        }
+
+        .contact p { margin-bottom: 0; font-size: 14px; color: var(--text); }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer p {
+            text-align: center;
+            font-size: 14px;       /* text-sm */
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .footer p.copyright {
+            font-size: 12px;       /* text-xs */
+            color: var(--muted-soft);
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 12px 10px 32px; }
+            .page { border-radius: 20px; }
+            .doc-header { padding: 16px 20px; }
+            .doc-body { padding: 22px 20px 28px; }
+            .highlight { padding: 16px 18px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header class="doc-header">
+            <div class="doc-icon" aria-hidden="true">
+                <!-- ShieldCheck 图标，与 App 弹窗标题栏一致 -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+            </div>
+            <div class="doc-heading">
+                <h1>隐私政策</h1>
+                <p class="version">版本 1.0</p>
+            </div>
+        </header>
+
+        <div class="doc-body">
+            <h1 class="title">隐私政策</h1>
+            <p class="date"><strong>生效日期</strong>：2026年11月22日</p>
+
+            <div class="highlight">
+                <p>欢迎使用「光序速练」（以下简称"本应用"）。本应用由<strong>光年跃迁（温州）科技有限公司</strong>（以下简称"我们"）开发并运营。我们深知个人信息对您的重要性，将严格遵守《中华人民共和国个人信息保护法》等相关法律法规，保护您的个人信息安全。</p>
+            </div>
+
+            <p>本隐私政策旨在说明我们如何收集、使用、存储和保护您在使用本应用过程中产生的信息，以及您对这些信息所享有的权利。请您在使用本应用前仔细阅读并充分理解本政策的全部内容，尤其是加粗的条款。如您对本政策有任何疑问、意见或建议，可通过本政策末尾提供的联系方式与我们联系。</p>
+
+            <section>
+                <h2>一、我们收集的信息</h2>
+                <p>本应用<strong>不收集</strong>您的任何个人身份信息或设备信息。在您使用过程中产生的以下内容仅保存在您的设备本地，不会上传：</p>
+                <ol>
+                    <li><strong>自测记录</strong>：您在点按测速、节奏跟测、反应测速、连贯滑动、多指矩阵等模式下主动生成的测试结果（如点击频率 CPS、反应时延、完成耗时、准确率、个人最佳等），用于为您呈现历史记录与个人最佳。</li>
+                    <li><strong>偏好设置</strong>：您在参数设置中选择的主题、音效、震动、光点形状与尺寸、点空计失误开关等配置。</li>
+                </ol>
+                <p>我们<strong>不会</strong>收集设备型号、操作系统版本、设备标识符（如 IMEI / OAID / MAC 地址 / Android ID）、IP 地址或任何可识别您个人身份的信息，也不接入任何账号体系。</p>
+            </section>
+
+            <section>
+                <h2>二、我们如何使用信息</h2>
+                <p>我们仅在实现本应用核心功能所必需的范围内使用上述信息，且全部处理均在您的设备本地完成：</p>
+                <ol>
+                    <li><strong>提供核心功能</strong>：使用本机存储的自测记录为您呈现历史记录与个人最佳；使用偏好设置应用界面外观与测试规则。</li>
+                    <li><strong>本地统计</strong>：对自测数据的统计与个人最佳计算仅在您的设备本地完成，不会上传至任何服务器。</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>三、我们如何共享、转让和公开披露信息</h2>
+                <p>我们郑重承诺：<strong>不会</strong>向任何第三方共享、转让或公开披露您的信息。本应用不接入第三方数据统计、广告投放、社交分享或支付内购类 SDK，所有数据始终保留在您的设备本地。</p>
+                <p>仅在法律法规明确规定，或行政、司法机关依法提出强制性要求时，我们才可能予以配合；但因相关数据仅存储于您的设备，我们无法主动获取或提供您设备中的数据。</p>
+            </section>
+
+            <section>
+                <h2>四、我们如何存储和保护信息</h2>
+                <ol>
+                    <li><strong>存储位置</strong>：您的自测记录与偏好设置仅存储于您设备的本地存储空间，<strong>不会上传至境内或境外的任何服务器</strong>。</li>
+                    <li><strong>存储期限</strong>：在您主动删除记录或卸载本应用之前，数据将保留在本机；您可随时在应用内删除。</li>
+                    <li><strong>安全措施</strong>：数据完全处于您的设备控制之下，您可通过设备系统提供的安全机制（如锁屏、加密）加以保护。</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>五、您的权利</h2>
+                <p>根据相关法律法规，您对您的信息享有以下权利：</p>
+                <ol>
+                    <li><strong>访问权</strong>：您可以在「历史记录」中查看自测记录与个人最佳。</li>
+                    <li><strong>更正权</strong>：您可以在「参数设置」中随时修改偏好设置。</li>
+                    <li><strong>删除权</strong>：您可以删除单条记录，或在「参数设置 → 本地测试记录管理」中一键清除全部记录，应用将立即删除相关数据。</li>
+                    <li><strong>数据导出</strong>：本应用所有数据存储在您的设备本地，您可以通过设备备份等方式自行导出。</li>
+                </ol>
+            </section>
+
+            <section>
+                <h2>六、未成年人保护</h2>
+                <p>我们非常重视对未成年人个人信息的保护。如您是未满 14 周岁的未成年人，在使用本应用前，应在监护人的指导下仔细阅读本政策，并征得监护人的同意。</p>
+            </section>
+
+            <section>
+                <h2>七、本政策的更新</h2>
+                <p>我们可能会根据法律法规的更新、业务的调整或技术的发展，适时对本隐私政策进行修订。修订后的政策将在本应用内显著位置公示，并在生效前通过合理方式通知您。如您继续使用本应用，即表示您同意接受修订后的政策。</p>
+            </section>
+
+            <section>
+                <h2>八、联系我们</h2>
+                <p>如您对本隐私政策有任何疑问、意见或建议，或需要行使您的相关权利，请通过以下方式与我们联系：</p>
+                <div class="contact">
+                    <p><strong>电子邮箱</strong>：Jp112022@163.com</p>
+                </div>
+            </section>
+
+            <div class="footer">
+                <p>感谢您使用光序速练！</p>
+                <p>我们致力于为您提供便捷、可靠的指尖操作自测服务。</p>
+                <p class="copyright">© 2026 光年跃迁（温州）科技有限公司 版权所有</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

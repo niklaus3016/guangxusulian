@@ -1,0 +1,6 @@
+{
+  "name": "光序速练",
+  "description": "光序速练｜指尖操作自测工具，测试点击速度与反应时延，记录个人训练数据。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
